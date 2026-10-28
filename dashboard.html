@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - SMEAFACT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="kontenDashboard" class="container" style="display: none;">
+        <div class="header-nav">
+            <h2>Dashboard SMEAFACT</h2>
+            <button id="btnLogout">Logout</button>
+        </div>
+        <p>Login sebagai: <strong id="adminEmail"></strong></p>
+        <hr>
+        
+        <h3>Tambah Pengumuman Baru</h3>
+        <form id="formPengumuman">
+            <input type="text" id="judul" placeholder="Judul Pengumuman" required>
+            
+            <select id="kategori">
+                <option value="Akademik">Akademik</option>
+                <option value="Kegiatan OSIS">Kegiatan OSIS</option>
+                <option value="Beasiswa">Beasiswa</option>
+                <option value="Umum">Umum</option>
+            </select>
+            
+            <textarea id="isi" placeholder="Tulis isi pengumuman di sini..." rows="5" required></textarea>
+            
+            <!-- Input Tautan Berkas / Gambar -->
+            <input type="text" id="fileUrlInput" placeholder="🔗 Link Tautan Berkas/Gambar (Opsional, cth: Google Drive)">
+            
+            <button type="submit">Terbitkan Pengumuman</button>
+        </form>
+
+        <hr>
+        
+        <h3>Daftar Pengumuman</h3>
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Judul</th>
+                        <th>Kategori</th>
+                        <th>Penulis</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelPengumuman">
+                    <!-- Data dari Firebase -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
